@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+:root {
+  --color-one: hsl(0, 0%, 17%);
+  --color-two: hsl(0, 0%, 59%);
+  --color-three: hsl(0, 0%, 100%);
+}
+
+header {
+  height: 280px;
+  background-image: url("./images/pattern-bg-desktop.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-top: 30px;
+  color: var(--color-three);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.search {
+  width: 50%;
+  margin-top: 30px;
+  display: flex;
+}
+
+.ip-details-container {
+  display: flex;
+  width: 65%;
+  height: 150px;
+  margin: 0 auto;
+  background-color: var(--color-three);
+  position: absolute;
+  top: 22%;
+  z-index: 1;
+  border-radius: 20px;
+}
+
+.ip-address,
+.location,
+.timezone,
+.isp {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hr {
+  border-right: 1px solid var(--color-two);
+  margin: 40px 0;
+}
+
+.ip-details-key {
+  color: var(--color-two);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 35px 0 0 25px;
+}
+
+.ip-details-value {
+  color: var(--color-one);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 10px 0 25px;
+  line-height: 1.3;
+}
+
+.leaflet-container {
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 250px;
+    background-image: url("./images/pattern-bg-mobile.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    margin-top: 30px;
+    color: var(--color-three);
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .search {
+    margin-top: 20px;
+    width: 90%;
+    display: flex;
+  }
+
+  .ip-details-container {
+    height: 250px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: var(--color-three);
+    border-radius: 20px;
+  }
+
+  .ip-details-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: -80px;
+    padding: 10px;
+  }
+
+  .ip-details-key {
+    color: var(--color-two);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .ip-details-value {
+    color: var(--color-one);
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
