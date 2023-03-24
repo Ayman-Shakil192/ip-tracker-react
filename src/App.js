@@ -16,12 +16,13 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("193.62.157.66");
   const [position, setPosition] = useState([51.505, -0.09]);
 
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const URL = `https://geo.ipify.org/api/v2/country,city,vpn?apiKey=${API_KEY}&ipAddress=${searchTerm}`;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(
-          `https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_IVXW0GhkgnAyqTzAr7YsCePJvSoIz&ipAddress=${searchTerm}`
-        );
+        const res = await axios.get(URL);
         setData(res.data);
         setPosition([res.data.location.lat, res.data.location.lng]);
       } catch (err) {
