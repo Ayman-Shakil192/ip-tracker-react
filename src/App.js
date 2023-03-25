@@ -36,9 +36,11 @@ const App = () => {
     }
   }, [searchTerm]);
 
-  function ChangeView({ center, zoom }) {
+  function ChangeView() {
     const map = useMap();
-    map.setView(center, zoom);
+    map.flyTo(position, 13, {
+      animate: true,
+    });
     return null;
   }
 
@@ -100,7 +102,7 @@ const App = () => {
       </header>
       {position && (
         <MapContainer center={position} zoom={13} zoomControl={false}>
-          <ChangeView center={position} zoom={13} />
+          <ChangeView />
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
